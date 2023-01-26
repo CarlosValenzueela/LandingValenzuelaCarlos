@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación 1. Manejo de Versiones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style type="text/css">
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .hobbies {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .series {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .contacto {
+            grid-column: 3;
+            grid-row: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="text-center">
+        <img src="data:image/png;base64,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"
+            class="rounded" alt="...">
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="wrapper">
+        <div class="hobbies">
+            <ul class="list-group"> Hobbies
+                <li class="list-group-item list-group-item-warning">Aprender cosas nuevas, de cualquier ámbito</li>
+                <li class="list-group-item list-group-item-warning">Leer, pudieran ser libros o artículos científicos
+                </li>
+                <li class="list-group-item list-group-item-warning">Tocar la guitarra</li>
+                <li class="list-group-item list-group-item-warning">Convivir, me gusta salir a socializar</li>
+                <li class="list-group-item list-group-item-warning">De vez en cuando, videojuegos</li>
+                <li class="list-group-item list-group-item-warning">Practicar deportes</li>
+            </ul>
+        </div>
+
+        <div class="series">
+            <ul class="list-group"> Series o películas favoritas
+                <li class="list-group-item list-group-item-info">Serie: La Ley y el Orden</li>
+                <li class="list-group-item list-group-item-info">Serie: Arcane</li>
+                <li class="list-group-item list-group-item-info">Serie: Breaking Bad</li>
+                <li class="list-group-item list-group-item-info">Película : Interstellar</li>
+                <li class="list-group-item list-group-item-info">Película : Hasta el último hombre</li>
+            </ul>
+        </div>
+
+        <div class="contacto">
+            <ul class="list-group"> Contacto
+                <li class="list-group-item list-group-item-dark">Nombre: Carlos Antonio Valenzuela Valdez</li>
+                <li class="list-group-item list-group-item-dark">Correo: Carlos.valenzuela207256@potros.itson.edu.mx
+                </li>
+                <li class="list-group-item list-group-item-dark">GitHub: https://github.com/CarlosValenzueela</li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
